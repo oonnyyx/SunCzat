@@ -4,6 +4,11 @@
 
 A chat plugin for Paper 26.2 with ranks, private messages, @mentions, showing off the item in your hand, anti-spam with a word filter, timed mutes and a custom TAB list.
 
+<p align="center">
+  <img src="docs/rangi.jpg" width="59%" alt="Ranks with badges">
+  <img src="docs/powiadomienia.jpg" width="39%" alt="Notification settings">
+</p>
+
 ## Features
 
 - **Ranks**: each one has a prefix, nick and message colors, a weight that sorts the TAB list, and permissions given together with the rank. The default config has 14 ranks, from Owner to Gracz (player). Players without a rank get the default one.

@@ -4,6 +4,11 @@
 
 Plugin czatu na Paper 26.2: rangi, prywatne wiadomości, @wzmianki, pokazywanie przedmiotu z ręki, anty-spam z filtrem słów, czasowe wyciszenia i własna lista graczy pod TAB.
 
+<p align="center">
+  <img src="docs/rangi.jpg" width="59%" alt="Rangi z plakietkami">
+  <img src="docs/powiadomienia.jpg" width="39%" alt="Ustawienia powiadomień">
+</p>
+
 ## Funkcje
 
 - **Rangi**: każda ma prefiks, kolor nicku i wiadomości, wagę, według której sortuje się lista pod TAB, oraz uprawnienia nadawane razem z rangą. W domyślnym configu jest 14 rang, od Ownera do Gracza. Gracz bez rangi dostaje domyślną.
