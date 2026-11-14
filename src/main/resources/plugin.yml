@@ -1,0 +1,52 @@
+name: SunCzat
+version: '${project.version}'
+main: pl.onyxdev.czat.SunCzat
+api-version: '26.2'
+author: oonnyyx
+depend: [SunCore]
+description: Czat SunCraftMC — rangi, prywatne wiadomości, wzmianki, anty-spam, [item], wyciszanie powiadomień
+commands:
+  msg:
+    description: Prywatna wiadomość
+    usage: "/msg <gracz> <wiadomość>"
+    aliases: [w, pw, tell, whisper, napisz]
+  r:
+    description: Odpowiedz na ostatnią prywatną wiadomość
+    usage: "/r <wiadomość>"
+    aliases: [odpowiedz]
+  ignoruj:
+    description: Ignoruj gracza (nie widzisz jego czatu i prywatnych wiadomości)
+    usage: "/ignoruj <gracz>"
+  powiadomienia:
+    description: Wybierz, które powiadomienia chcesz widzieć
+    usage: "/powiadomienia"
+  ranga:
+    description: Rangi (admin)
+    usage: "/ranga <daj|lista|gracz>"
+    permission: czat.admin
+  wycisz:
+    description: Wycisz gracza na czacie
+    usage: "/wycisz <gracz> [czas: 10m, 2h, 1d] [powód]"
+    permission: czat.wycisz
+  odcisz:
+    description: Zdejmij wyciszenie
+    usage: "/odcisz <gracz>"
+    permission: czat.wycisz
+  podglad:
+    description: Podgląd prywatnych wiadomości (admin)
+    usage: "/podglad"
+    permission: czat.admin
+  czat:
+    description: Przeładowanie konfiguracji czatu
+    usage: "/czat reload"
+    permission: czat.admin
+permissions:
+  czat.admin:
+    description: Rangi, podgląd prywatnych wiadomości, reload
+    default: op
+  czat.wycisz:
+    description: Wyciszanie graczy
+    default: op
+  czat.bypass:
+    description: Omija anty-spam i filtr słów
+    default: op

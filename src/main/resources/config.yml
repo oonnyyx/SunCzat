@@ -1,0 +1,176 @@
+# SunCzat — czat SunCraftMC. Po zmianach: /czat reload
+#
+# Format linii czatu (MiniMessage). Znaczniki: <prefiks> <nick> <wiadomosc>
+format: "<prefiks> <nick> <dark_gray>»</dark_gray> <wiadomosc>"
+
+# Paczka zasobów SunCraft (przedmioty i obrazki rang). Wysyła ją ten plugin przy wchodzeniu,
+# więc w server.properties resource-pack ma być PUSTE (inaczej gracz dostanie ją dwa razy).
+# Nowa wersja paczki: zmień url i sha1 tutaj, /czat reload (bez restartu).
+paczka:
+  url: ""
+  sha1: ""
+  opis: "<gold>SunCraft: mityczne przedmioty, rangi i grafiki serwera"
+  wymagana: false
+  czekaj-sekund: 90
+
+# Rangi. Nadawanie: /ranga daj <gracz> <ranga>. Gracz bez rangi dostaje tę z domyslna: true.
+# waga: wyższa = ważniejsza (wyżej na liście graczy pod TAB).
+# uprawnienia: nadawane graczowi razem z rangą (np. czat.wycisz dla moderatora).
+# obrazek: znak plakietki z paczki zasobów (czcionka suncraft:rangi, U+E001…U+E00E). Kto ma paczkę, widzi obrazek;
+#          kto nie ma, widzi prefiks tekstowy. W TAB i nad głową zawsze obrazek (to jedna wersja dla wszystkich).
+rangi:
+  owner:
+    nazwa: "Owner"
+    obrazek: "\uE001"
+    prefiks: "<#ff4d4d><b>[Owner]</b></#ff4d4d>"
+    kolor-nicku: "#ffd6d2"
+    kolor-wiadomosci: "#ffffff"
+    waga: 1000
+    uprawnienia: [czat.admin, czat.wycisz, czat.bypass]
+  admin:
+    nazwa: "Admin"
+    obrazek: "\uE002"
+    prefiks: "<#ff7a3d>[Admin]</#ff7a3d>"
+    kolor-nicku: "#ffe2d4"
+    kolor-wiadomosci: "#ffffff"
+    waga: 900
+    uprawnienia: [czat.admin, czat.wycisz, czat.bypass]
+  modplus:
+    nazwa: "Mod+"
+    obrazek: "\uE003"
+    prefiks: "<#b07cff>[Mod+]</#b07cff>"
+    kolor-nicku: "#ece2ff"
+    kolor-wiadomosci: "#ffffff"
+    waga: 800
+    uprawnienia: [czat.wycisz, czat.bypass]
+  moderator:
+    nazwa: "Mod"
+    obrazek: "\uE004"
+    prefiks: "<#4f9bff>[Mod]</#4f9bff>"
+    kolor-nicku: "#dcebff"
+    kolor-wiadomosci: "#ffffff"
+    waga: 700
+    uprawnienia: [czat.wycisz, czat.bypass]
+  helper:
+    nazwa: "Helper"
+    obrazek: "\uE005"
+    prefiks: "<#3ccb6e>[Helper]</#3ccb6e>"
+    kolor-nicku: "#dcf7e5"
+    kolor-wiadomosci: "#ffffff"
+    waga: 600
+    uprawnienia: [czat.wycisz]
+  chatmod:
+    nazwa: "ChatMod"
+    obrazek: "\uE006"
+    prefiks: "<#2ec4b6>[ChatMod]</#2ec4b6>"
+    kolor-nicku: "#d6f7f3"
+    kolor-wiadomosci: "#ffffff"
+    waga: 500
+    uprawnienia: [czat.wycisz]
+  streamer:
+    nazwa: "Streamer"
+    obrazek: ""
+    prefiks: "<#53fc18>[Streamer]</#53fc18>"
+    kolor-nicku: "#e2ffd6"
+    kolor-wiadomosci: "#ffffff"
+    waga: 450
+    uprawnienia: []
+  youtubeplus:
+    nazwa: "YouTube+"
+    obrazek: ""
+    prefiks: "<#ff3b3b><b>[YouTube+]</b></#ff3b3b>"
+    kolor-nicku: "#ffdede"
+    kolor-wiadomosci: "#ffffff"
+    waga: 420
+    uprawnienia: []
+  tiktokplus:
+    nazwa: "TikTok+"
+    obrazek: ""
+    prefiks: "<gradient:#2ef2ea:#ff2d6f><b>[TikTok+]</b></gradient>"
+    kolor-nicku: "#e0fbfa"
+    kolor-wiadomosci: "#ffffff"
+    waga: 410
+    uprawnienia: []
+  youtube:
+    nazwa: "YouTube"
+    obrazek: ""
+    prefiks: "<#ff3b3b>[YouTube]</#ff3b3b>"
+    kolor-nicku: "#ffe6e6"
+    kolor-wiadomosci: "#f4f4f4"
+    waga: 360
+    uprawnienia: []
+  tiktok:
+    nazwa: "TikTok"
+    obrazek: ""
+    prefiks: "<#2ef2ea>[TikTok]</#2ef2ea>"
+    kolor-nicku: "#e6fcfb"
+    kolor-wiadomosci: "#f4f4f4"
+    waga: 350
+    uprawnienia: []
+  legenda:
+    nazwa: "Legenda"
+    obrazek: "\uE007"
+    prefiks: "<gradient:#ffe27a:#e39a00>[Legenda]</gradient>"
+    kolor-nicku: "#ffe9a8"
+    kolor-wiadomosci: "#fff8e6"
+    waga: 300
+    uprawnienia: []
+  vip:
+    nazwa: "VIP"
+    obrazek: "\uE008"
+    prefiks: "<#e85ad6>[VIP]</#e85ad6>"
+    kolor-nicku: "#fbdcf6"
+    kolor-wiadomosci: "#f4f4f4"
+    waga: 200
+    uprawnienia: []
+  gracz:
+    nazwa: "Gracz"
+    obrazek: "\uE009"
+    prefiks: "<#8f8f8f>[Gracz]</#8f8f8f>"
+    kolor-nicku: "#e6e6e6"
+    kolor-wiadomosci: "#d6d6d6"
+    waga: 0
+    domyslna: true
+    uprawnienia: []
+
+antyspam:
+  min-odstep-ms: 1000        # najkrótszy odstęp między wiadomościami
+  max-wiadomosci: 4          # ile wiadomości…
+  okno-sekund: 6             # …w tym oknie czasu
+  powtorka-sekund: 30        # ta sama wiadomość drugi raz dopiero po tym czasie
+  caps-procent: 70           # powyżej tylu % wielkich liter wiadomość jest zamieniana na małe
+  caps-min-dlugosc: 8
+
+filtr:
+  wlaczony: true
+  # Rdzenie słów: słowo zawierające rdzeń zamienia się na gwiazdki. Wielkość liter, polskie znaki
+  # i powtórzone litery (kuuurwa) nie pomagają. Cyfry zamiast liter łapie tylko częściowo (1→i, 3→e, 4→a, 0→o).
+  slowa: [kurw, chuj, huj, pierdol, pierdal, pizd, jeba, jebi, jebn, jebc, jebie, pojeb, cipa, cipk, kutas, dziwk, cwel]
+  # Słowa, które zawierają rdzeń, ale są w porządku.
+  wyjatki: [zajebist, zajebisc]
+
+wzmianki:
+  dzwiek: block.note_block.pling
+  ton: 1.6
+
+prywatne:
+  dzwiek: block.note_block.chime
+  ton: 1.3
+
+# Lista graczy pod TAB. MiniMessage; znaczniki: <online> <max> <ping> <nick> <ranga> (oraz <tps>, jeśli kiedyś zechcesz)
+# <anim>tekst</anim> = złoty gradient, który się przelewa (jak intro przy wejściu).
+tab:
+  wlaczony: true
+  odswiezanie-tickow: 4
+  naglowek:
+    - ""
+    - "<b><anim>☀  S U N C R A F T  ☀</anim></b>"
+    - "<gray>Latające wyspy</gray>"
+    - ""
+  stopka:
+    - ""
+    - "<gray>Online: <white><online></white><dark_gray>/</dark_gray><gray><max></gray>   <dark_gray>·</dark_gray>   <gray>Ping: <ping>"
+    - "<dark_gray>Twoja ranga: <ranga>"
+    - ""
+    - "<#ffc02e>onyxdev.pl"
+    - ""
